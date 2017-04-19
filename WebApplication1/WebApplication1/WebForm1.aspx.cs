@@ -23,6 +23,7 @@ namespace WebApplication1
             string appId = "df2835a951526a92d4b5d9d502a400dd";
             string url = string.Format("http://api.openweathermap.org/data/2.5/forecast/daily?q={0}&units=metric&cnt={1}", txtCity.Text, appId);
             using (WebClient client = new WebClient())
+
             {
                 string json = client.DownloadString(url);
                 WeatherInfo weatherInfo = (new JavaScriptSerializer()).Deserialize<WeatherInfo>(json);
